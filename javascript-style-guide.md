@@ -115,16 +115,16 @@ while(condition) {
 ```javascript
 // good
 var obj = {
-    a: 1,
-    b: 2,
-    c: 3
+  a: 1,
+  b: 2,
+  c: 3
 };
 
 // bad
 var obj = {
-    a : 1,
-    b:2,
-    c :3
+  a : 1,
+  b:2,
+  c :3
 };
 ```
 
@@ -215,9 +215,9 @@ var arr2 = [1, 2, 3];
 var obj1 = {};
 var obj2 = {name: 'obj'};
 var obj3 = {
-    name: 'obj',
-    age: 20,
-    sex: 1
+  name: 'obj',
+  age: 20,
+  sex: 1
 };
 
 // bad
@@ -250,26 +250,26 @@ var obj3 = {name: 'obj', age: 20, sex: 1};
 ```javascript
 // good
 if (user.isAuthenticated()
-    && user.isInRole('admin')
-    && user.hasAuthority('add-admin')
-    || user.hasAuthority('delete-admin')) {
-    // Code
+  && user.isInRole('admin')
+  && user.hasAuthority('add-admin')
+  || user.hasAuthority('delete-admin')) {
+  // Code
 }
 
 var result = number1 + number2 + number3
-    + number4 + number5;
+  + number4 + number5;
 
 
 // bad
 if (user.isAuthenticated() &&
-    user.isInRole('admin') &&
-    user.hasAuthority('add-admin') ||
-    user.hasAuthority('delete-admin')) {
-    // Code
+  user.isInRole('admin') &&
+  user.hasAuthority('add-admin') ||
+  user.hasAuthority('delete-admin')) {
+  // Code
 }
 
 var result = number1 + number2 + number3 +
-    number4 + number5;
+  number4 + number5;
 ```
 
 ##### [强制] 在函数声明、函数表达式、函数调用、对象创建、数组创建、`for` 语句等场景中，不允许在 `,` 或 `;` 前换行。
@@ -279,29 +279,29 @@ var result = number1 + number2 + number3 +
 ```javascript
 // good
 var obj = {
-    a: 1,
-    b: 2,
-    c: 3
+  a: 1,
+  b: 2,
+  c: 3
 };
 
 foo(
-    aVeryVeryLongArgument,
-    anotherVeryLongArgument,
-    callback
+  aVeryVeryLongArgument,
+  anotherVeryLongArgument,
+  callback
 );
 
 
 // bad
 var obj = {
-    a: 1
-    , b: 2
-    , c: 3
+  a: 1
+  , b: 2
+  , c: 3
 };
 
 foo(
-    aVeryVeryLongArgument
-    , anotherVeryLongArgument
-    , callback
+  aVeryVeryLongArgument
+  , anotherVeryLongArgument
+  , callback
 );
 ```
 
@@ -312,11 +312,11 @@ foo(
 ```javascript
 // 仅为按逻辑换行的示例，不代表setStyle的最优实现
 function setStyle(element, property, value) {
-    if (element == null) {
-        return;
-    }
+  if (element == null) {
+    return;
+  }
 
-    element.style[property] = value;
+  element.style[property] = value;
 }
 ```
 
@@ -328,88 +328,88 @@ function setStyle(element, property, value) {
 // 较复杂的逻辑条件组合，将每个条件独立一行，逻辑运算符放置在行首进行分隔，或将部分逻辑按逻辑组合进行分隔。
 // 建议最终将右括号 ) 与左大括号 { 放在独立一行，保证与 `if` 内语句块能容易视觉辨识。
 if (user.isAuthenticated()
-    && user.isInRole('admin')
-    && user.hasAuthority('add-admin')
-    || user.hasAuthority('delete-admin')
+  && user.isInRole('admin')
+  && user.hasAuthority('add-admin')
+  || user.hasAuthority('delete-admin')
 ) {
-    // Code
+  // Code
 }
 
 // 按一定长度截断字符串，并使用 + 运算符进行连接。
 // 分隔字符串尽量按语义进行，如不要在一个完整的名词中间断开。
 // 特别的，对于 HTML 片段的拼接，通过缩进，保持和 HTML 相同的结构。
 var html = '' // 此处用一个空字符串，以便整个 HTML 片段都在新行严格对齐
-    + '<article>'
-    +     '<h1>Title here</h1>'
-    +     '<p>This is a paragraph</p>'
-    +     '<footer>Complete</footer>'
-    + '</article>';
+  + '<article>'
+  +   '<h1>Title here</h1>'
+  +   '<p>This is a paragraph</p>'
+  +   '<footer>Complete</footer>'
+  + '</article>';
 
 // 也可使用数组来进行拼接，相对 `+` 更容易调整缩进。
 var html = [
-    '<article>',
-        '<h1>Title here</h1>',
-        '<p>This is a paragraph</p>',
-        '<footer>Complete</footer>',
-    '</article>'
+  '<article>',
+    '<h1>Title here</h1>',
+    '<p>This is a paragraph</p>',
+    '<footer>Complete</footer>',
+  '</article>'
 ];
 html = html.join('');
 
 // 当参数过多时，将每个参数独立写在一行上，并将结束的右括号 ) 独立一行。
 // 所有参数必须增加一个缩进。
 foo(
-    aVeryVeryLongArgument,
-    anotherVeryLongArgument,
-    callback
+  aVeryVeryLongArgument,
+  anotherVeryLongArgument,
+  callback
 );
 
 // 也可以按逻辑对参数进行组合。
 // 最经典的是 baidu.format 函数，调用时将参数分为“模板”和“数据”两块
 baidu.format(
-    dateFormatTemplate,
-    year, month, date, hour, minute, second
+  dateFormatTemplate,
+  year, month, date, hour, minute, second
 );
 
 // 当函数调用时，如果有一个或以上参数跨越多行，应当每一个参数独立一行。
 // 这通常出现在匿名函数或者对象初始化等作为参数时，如 `setTimeout` 函数等。
 setTimeout(
-    function () {
-        alert('hello');
-    },
-    200
+  function () {
+    alert('hello');
+  },
+  200
 );
 
 order.data.read(
-    'id=' + me.model.id,
-    function (data) {
-        me.attchToModel(data.result);
-        callback();
-    },
-    300
+  'id=' + me.model.id,
+  function (data) {
+    me.attchToModel(data.result);
+    callback();
+  },
+  300
 );
 
 // 链式调用较长时采用缩进进行调整。
 $('#items')
-    .find('.selected')
-    .highlight()
-    .end();
+  .find('.selected')
+  .highlight()
+  .end();
 
 // 三元运算符由3部分组成，因此其换行应当根据每个部分的长度不同，形成不同的情况。
 var result = thisIsAVeryVeryLongCondition
-    ? resultA : resultB;
+  ? resultA : resultB;
 
 var result = condition
-    ? thisIsAVeryVeryLongResult
-    : resultB;
+  ? thisIsAVeryVeryLongResult
+  : resultB;
 
 // 数组和对象初始化的混用，严格按照每个对象的 `{` 和结束 `}` 在独立一行的风格书写。
 var array = [
-    {
-        // ...
-    },
-    {
-        // ...
-    }
+  {
+    // ...
+  },
+  {
+    // ...
+  }
 ];
 ```
 
@@ -427,13 +427,13 @@ var array = [
 ```javascript
 // good
 if (condition) {
-    callFunc();
+  callFunc();
 }
 
 // bad
 if (condition) callFunc();
 if (condition)
-    callFunc();
+  callFunc();
 ```
 
 ##### [强制] 函数定义结束不允许添加分号。
@@ -478,8 +478,8 @@ var func = function () {
 
 // bad
 var task = function () {
-    // Code
-    return result;
+  // Code
+  return result;
 }();
 
 var func = (function () {
@@ -543,12 +543,12 @@ function TextNode(options) {
 
 ```javascript
 function TextNode(value, engine) {
-    this.value = value;
-    this.engine = engine;
+  this.value = value;
+  this.engine = engine;
 }
 
 TextNode.prototype.clone = function () {
-    return this;
+  return this;
 };
 ```
 
@@ -558,10 +558,10 @@ TextNode.prototype.clone = function () {
 
 ```javascript
 var TargetState = {
-    READING: 1,
-    READED: 2,
-    APPLIED: 3,
-    READY: 4
+  READING: 1,
+  READED: 2,
+  APPLIED: 3,
+  READY: 4
 };
 ```
 
@@ -695,7 +695,7 @@ loadingData.then(callback);
 /**
  * @file Describe the file
  * @author author-name(mail-name@domain.com)
- *         author-name2(mail-name2@domain.com)
+ *     author-name2(mail-name2@domain.com)
  */
 ```
 
@@ -728,21 +728,21 @@ var util = {};
  */
 Select.prototype.clickHandler = function () {
 
-    /**
-     * 值变更时触发
-     *
-     * @event Select#change
-     * @param {Object} e e描述
-     * @param {string} e.before before描述
-     * @param {string} e.after after描述
-     */
-    this.fire(
-        'change',
-        {
-            before: 'foo',
-            after: 'bar'
-        }
-    );
+  /**
+   * 值变更时触发
+   *
+   * @event Select#change
+   * @param {Object} e e描述
+   * @param {string} e.before before描述
+   * @param {string} e.after after描述
+   */
+  this.fire(
+    'change',
+    {
+      before: 'foo',
+      after: 'bar'
+    }
+  );
 };
 ```
 
@@ -758,11 +758,11 @@ Select.prototype.clickHandler = function () {
 
 ```javascript
 function foo(p1, p2, opt_p3) {
-    // 这里对具体内部逻辑进行说明
-    // 说明太长需要换行
-    for (...) {
-        ....
-    }
+  // 这里对具体内部逻辑进行说明
+  // 说明太长需要换行
+  for (...) {
+    ....
+  }
 }
 ```
 
@@ -822,8 +822,8 @@ var visited = {};
 
 // bad
 var hangModules = [],
-    missModules = [],
-    visited = {};
+  missModules = [],
+  visited = {};
 ```
 
 
@@ -842,12 +842,12 @@ var hangModules = [],
 ```javascript
 // good
 if (age === 30) {
-    // ......
+  // ......
 }
 
 // bad
 if (age == 30) {
-    // ......
+  // ......
 }
 ```
 
@@ -861,12 +861,12 @@ if (age == 30) {
 
 // good
 if (!name) {
-    // ......
+  // ......
 }
 
 // bad
 if (name === '') {
-    // ......
+  // ......
 }
 ```
 
@@ -875,12 +875,12 @@ if (name === '') {
 
 // good
 if (name) {
-    // ......
+  // ......
 }
 
 // bad
 if (name !== '') {
-    // ......
+  // ......
 }
 ```
 
@@ -889,12 +889,12 @@ if (name !== '') {
 
 // good
 if (collection.length) {
-    // ......
+  // ......
 }
 
 // bad
 if (collection.length > 0) {
-    // ......
+  // ......
 }
 ```
 
@@ -903,12 +903,12 @@ if (collection.length > 0) {
 
 // good
 if (!notTrue) {
-    // ......
+  // ......
 }
 
 // bad
 if (notTrue === false) {
-    // ......
+  // ......
 }
 ```
 
@@ -944,23 +944,23 @@ if (noValue === null || typeof noValue === 'undefined') {
 ```javascript
 // good
 switch (typeof variable) {
-    case 'object':
-        // ......
-        break;
-    case 'number':
-    case 'boolean':
-    case 'string':
-        // ......
-        break;
+  case 'object':
+    // ......
+    break;
+  case 'number':
+  case 'boolean':
+  case 'string':
+    // ......
+    break;
 }
 
 // bad
 var type = typeof variable;
 if (type === 'object') {
-    // ......
+  // ......
 }
 else if (type === 'number' || type === 'boolean' || type === 'string') {
-    // ......
+  // ......
 }
 ```
 
@@ -971,21 +971,21 @@ else if (type === 'number' || type === 'boolean' || type === 'string') {
 ```javascript
 // good
 function getName() {
-    if (name) {
-        return name;
-    }
+  if (name) {
+    return name;
+  }
 
-    return 'unnamed';
+  return 'unnamed';
 }
 
 // bad
 function getName() {
-    if (name) {
-        return name;
-    }
-    else {
-        return 'unnamed';
-    }
+  if (name) {
+    return name;
+  }
+  else {
+    return 'unnamed';
+  }
 }
 ```
 
@@ -1008,19 +1008,19 @@ function getName() {
 ```javascript
 // good
 function clicker() {
-    // ......
+  // ......
 }
 
 for (var i = 0, len = elements.length; i < len; i++) {
-    var element = elements[i];
-    addListener(element, 'click', clicker);
+  var element = elements[i];
+  addListener(element, 'click', clicker);
 }
 
 
 // bad
 for (var i = 0, len = elements.length; i < len; i++) {
-    var element = elements[i];
-    addListener(element, 'click', function () {});
+  var element = elements[i];
+  addListener(element, 'click', function () {});
 }
 ```
 
@@ -1032,17 +1032,17 @@ for (var i = 0, len = elements.length; i < len; i++) {
 // good
 var width = wrap.offsetWidth + 'px';
 for (var i = 0, len = elements.length; i < len; i++) {
-    var element = elements[i];
-    element.style.width = width;
-    // ......
+  var element = elements[i];
+  element.style.width = width;
+  // ......
 }
 
 
 // bad
 for (var i = 0, len = elements.length; i < len; i++) {
-    var element = elements[i];
-    element.style.width = wrap.offsetWidth + 'px';
-    // ......
+  var element = elements[i];
+  element.style.width = wrap.offsetWidth + 'px';
+  // ......
 }
 ```
 
@@ -1200,19 +1200,19 @@ var html = '<div class="cls">拼接HTML可以省去双引号转义</div>';
 ```javascript
 // 使用数组拼接字符串
 var str = [
-    // 推荐换行开始并缩进开始第一个字符串, 对齐代码, 方便阅读.
-    '<ul>',
-        '<li>第一项</li>',
-        '<li>第二项</li>',
-    '</ul>'
+  // 推荐换行开始并缩进开始第一个字符串, 对齐代码, 方便阅读.
+  '<ul>',
+    '<li>第一项</li>',
+    '<li>第二项</li>',
+  '</ul>'
 ].join('');
 
 // 使用 `+` 拼接字符串
 var str2 = '' // 建议第一个为空字符串, 第二个换行开始并缩进开始, 对齐代码, 方便阅读
-    + '<ul>',
-    +    '<li>第一项</li>',
-    +    '<li>第二项</li>',
-    + '</ul>';
+  + '<ul>',
+  +  '<li>第一项</li>',
+  +  '<li>第二项</li>',
+  + '</ul>';
 ```
 
 ##### [建议] 使用字符串拼接的方式生成HTML，需要根据语境进行合理的转义。
@@ -1262,8 +1262,8 @@ var obj = new Object();
 
 ```javascript
 var info = {
-    name: 'someone',
-    age: 28
+  name: 'someone',
+  age: 28
 };
 ```
 
@@ -1279,16 +1279,16 @@ var info = {
 ```javascript
 // good
 var info = {
-    'name': 'someone',
-    'age': 28,
-    'more-info': '...'
+  'name': 'someone',
+  'age': 28,
+  'more-info': '...'
 };
 
 // bad
 var info = {
-    name: 'someone',
-    age: 28,
-    'more-info': '...'
+  name: 'someone',
+  age: 28,
+  'more-info': '...'
 };
 ```
 
@@ -1325,9 +1325,9 @@ info['more-info'];
 ```javascript
 var newInfo = {};
 for (var key in info) {
-    if (info.hasOwnProperty(key)) {
-        newInfo[key] = info[key];
-    }
+  if (info.hasOwnProperty(key)) {
+    newInfo[key] = info[key];
+  }
 }
 ```
 
@@ -1365,12 +1365,12 @@ arr.other = 'other things';
 
 // 正确的遍历方式
 for (var i = 0, len = arr.length; i < len; i++) {
-    console.log(i);
+  console.log(i);
 }
 
 // 错误的遍历方式
 for (var i in arr) {
-    console.log(i);
+  console.log(i);
 }
 ```
 
@@ -1408,46 +1408,46 @@ for (var i in arr) {
 
 ```javascript
 function syncViewStateOnUserAction() {
-    if (x.checked) {
-        y.checked = true;
-        z.value = '';
-    }
-    else {
-        y.checked = false;
-    }
+  if (x.checked) {
+    y.checked = true;
+    z.value = '';
+  }
+  else {
+    y.checked = false;
+  }
 
-    if (a.value) {
-        warning.innerText = '';
-        submitButton.disabled = false;
-    }
-    else {
-        warning.innerText = 'Please enter it';
-        submitButton.disabled = true;
-    }
+  if (a.value) {
+    warning.innerText = '';
+    submitButton.disabled = false;
+  }
+  else {
+    warning.innerText = 'Please enter it';
+    submitButton.disabled = true;
+  }
 }
 
 // 直接阅读该函数会难以明确其主线逻辑，因此下方是一种更合理的表达方式：
 
 function syncViewStateOnUserAction() {
-    syncXStateToView();
-    checkAAvailability();
+  syncXStateToView();
+  checkAAvailability();
 }
 
 function syncXStateToView() {
-    y.checked = x.checked;
+  y.checked = x.checked;
 
-    if (x.checked) {
-        z.value = '';
-    }
+  if (x.checked) {
+    z.value = '';
+  }
 }
 
 function checkAAvailability() {
-    if (a.value) {
-        clearWarnignForA();
-    }
-    else {
-        displayWarningForAMissing();
-    }
+  if (a.value) {
+    clearWarnignForA();
+  }
+  else {
+    displayWarningForAMissing();
+  }
 }
 ```
 
@@ -1479,11 +1479,11 @@ function checkAAvailability() {
  * @param {boolean} removeEventListeners 是否同时将所有注册在元素上的事件移除
  */
 function removeElement(element, removeEventListeners) {
-    element.parent.removeChild(element);
+  element.parent.removeChild(element);
 
-    if (removeEventListeners) {
-        element.clearEventListeners();
-    }
+  if (removeEventListeners) {
+    element.clearEventListeners();
+  }
 }
 ```
 
@@ -1498,11 +1498,11 @@ function removeElement(element, removeEventListeners) {
  * @param {boolean} options.removeEventListeners 是否同时将所有注册在元素上的事件移除
  */
 function removeElement(element, options) {
-    element.parent.removeChild(element);
+  element.parent.removeChild(element);
 
-    if (options.removeEventListeners) {
-        element.clearEventListeners();
-    }
+  if (options.removeEventListeners) {
+    element.clearEventListeners();
+  }
 }
 ```
 
@@ -1536,16 +1536,16 @@ Chakra、V8 和 SpiderMonkey 将受以上因素的影响，表现出不尽相同
 由于对闭包内变量有回收优化策略的 Chakra、V8 和 SpiderMonkey 引擎的行为较为相似，因此可以总结如下，当返回一个函数 **fn** 时：
 
 1. 如果 **fn** 的 `[[Scope]]` 是 ObjectEnvironment（with 表达式生成 ObjectEnvironment，函数和 catch 表达式生成 DeclarativeEnvironment），则：
-    1. 如果是 V8 引擎，则退出全过程。
-    2. 如果是 SpiderMonkey，则处理该 ObjectEnvironment 的外层 LexicalEnvironment。
+  1. 如果是 V8 引擎，则退出全过程。
+  2. 如果是 SpiderMonkey，则处理该 ObjectEnvironment 的外层 LexicalEnvironment。
 2. 获取当前 LexicalEnvironment 下的所有类型为 Function 的对象，对于每一个 Function 对象，分析其 FunctionBody：
-    1. 如果 FunctionBody 中含有 **直接调用 eval**，则退出全过程。
-    2. 否则得到所有的 Identifier。
-    3. 对于每一个 Identifier，设其为 **name**，根据查找变量引用的规则，从 LexicalEnvironment 中找出名称为 **name** 的绑定 binding。
-    4. 对 binding 添加 **notSwap** 属性，其值为 `true`。
+  1. 如果 FunctionBody 中含有 **直接调用 eval**，则退出全过程。
+  2. 否则得到所有的 Identifier。
+  3. 对于每一个 Identifier，设其为 **name**，根据查找变量引用的规则，从 LexicalEnvironment 中找出名称为 **name** 的绑定 binding。
+  4. 对 binding 添加 **notSwap** 属性，其值为 `true`。
 3. 检查当前 LexicalEnvironment 中的每一个变量绑定，如果该绑定有 **notSwap** 属性且值为 `true`，则：
-    1. 如果是 V8 引擎，删除该绑定。
-    2. 如果是 SpiderMonkey，将该绑定的值设为 `undefined`，将删除 **notSwap** 属性。
+  1. 如果是 V8 引擎，删除该绑定。
+  2. 如果是 SpiderMonkey，将该绑定的值设为 `undefined`，将删除 **notSwap** 属性。
 
 对于 Chakra 引擎，暂无法得知是按 V8 的模式还是按 SpiderMonkey 的模式进行。
 
@@ -1560,14 +1560,14 @@ Chakra、V8 和 SpiderMonkey 将受以上因素的影响，表现出不尽相同
 ```javascript
 var tasks = [];
 for (var i = 0; i < 5; i++) {
-    tasks[tasks.length] = function () {
-        console.log('Current cursor is at ' + i);
-    };
+  tasks[tasks.length] = function () {
+    console.log('Current cursor is at ' + i);
+  };
 }
 
 var len = tasks.length;
 while (len--) {
-    tasks[len]();
+  tasks[len]();
 }
 ```
 
@@ -1578,17 +1578,17 @@ while (len--) {
 ```javascript
 var tasks = [];
 for (var i = 0; i < 5; i++) {
-    // 注意有一层额外的闭包
-    tasks[tasks.length] = (function (i) {
-        return function () {
-            console.log('Current cursor is at ' + i);
-        };
-    })(i);
+  // 注意有一层额外的闭包
+  tasks[tasks.length] = (function (i) {
+    return function () {
+      console.log('Current cursor is at ' + i);
+    };
+  })(i);
 }
 
 var len = tasks.length;
 while (len--) {
-    tasks[len]();
+  tasks[len]();
 }
 ```
 
@@ -1644,10 +1644,10 @@ MyClass.prototype.hooks.after = EMPTY_FUNCTION;
  * @param {Function} superClass 父类函数
  */
 function inherits(subClass, superClass) {
-    var F = new Function();
-    F.prototype = superClass.prototype;
-    subClass.prototype = new F();
-    subClass.prototype.constructor = subClass;
+  var F = new Function();
+  F.prototype = superClass.prototype;
+  subClass.prototype = new F();
+  subClass.prototype.constructor = subClass;
 }
 ```
 
@@ -1657,21 +1657,21 @@ function inherits(subClass, superClass) {
 
 ```javascript
 function Animal(name) {
-    this.name = name;
+  this.name = name;
 }
 
 // 直接prototype等于对象时，需要修正constructor
 Animal.prototype = {
-    constructor: Animal,
+  constructor: Animal,
 
-    jump: function () {
-        alert('animal ' + this.name + ' jump');
-    }
+  jump: function () {
+    alert('animal ' + this.name + ' jump');
+  }
 };
 
 // 这种方式扩展prototype则无需理会constructor
 Animal.prototype.jump = function () {
-    alert('animal ' + this.name + ' jump');
+  alert('animal ' + this.name + ' jump');
 };
 ```
 
@@ -1684,12 +1684,12 @@ Animal.prototype.jump = function () {
 
 ```javascript
 function TextNode(value, engine) {
-    this.value = value;
-    this.engine = engine;
+  this.value = value;
+  this.engine = engine;
 }
 
 TextNode.prototype.clone = function () {
-    return this;
+  return this;
 };
 ```
 
@@ -1792,10 +1792,10 @@ var result = handler($('#x').val(), $('#y').val());
 
 ```javascript
 try {
-    delete o.x;
+  delete o.x;
 }
 catch (deleteError) {
-    o.x = null;
+  o.x = null;
 }
 ```
 
@@ -1817,16 +1817,16 @@ JavaScript 因其脚本语言的动态特性，当一个对象未被 seal 或 fr
 
 ```javascript
 function Tree(datasource) {
-    this.datasource = datasource;
+  this.datasource = datasource;
 }
 
 Tree.prototype.selectNode = function (id) {
-    // 从datasource中找出节点对象
-    var node = this.findNode(id);
-    if (node) {
-        node.selected = true;
-        this.flushView();
-    }
+  // 从datasource中找出节点对象
+  var node = this.findNode(id);
+  if (node) {
+    node.selected = true;
+    this.flushView();
+  }
 };
 ```
 
@@ -1834,19 +1834,19 @@ Tree.prototype.selectNode = function (id) {
 
 ```javascript
 function Tree(datasource) {
-    this.datasource = datasource;
-    this.selectedNodeIndex = {};
+  this.datasource = datasource;
+  this.selectedNodeIndex = {};
 }
 
 Tree.prototype.selectNode = function (id) {
 
-    // 从datasource中找出节点对象
-    var node = this.findNode(id);
+  // 从datasource中找出节点对象
+  var node = this.findNode(id);
 
-    if (node) {
-        this.selectedNodeIndex[id] = true;
-        this.flushView();
-    }
+  if (node) {
+    this.selectedNodeIndex[id] = true;
+      this.flushView();
+  }
 
 };
 ```
